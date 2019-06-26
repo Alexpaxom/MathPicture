@@ -1,0 +1,32 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.Group?>
+<?import sample.NumberTextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Label?>
+
+
+<Group fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <Canvas fx:id="canvas" />
+    <HBox spacing="10">
+        <VBox>
+            <Label text="Step" />
+            <NumberTextField text="1" fx:id="step_number"  />
+        </VBox>
+        <VBox>
+            <Label text="Number of rays" />
+            <NumberTextField text="400" fx:id="count_pieces" maxWidth="90"  />
+        </VBox>
+        <VBox>
+            <Label text="Delay" />
+            <Spinner fx:id="delay" maxWidth="60">
+                <valueFactory>
+                    <javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory min="0.1" initialValue="1" max="5" amountToStepBy="0.1"/>
+                </valueFactory>
+            </Spinner>
+        </VBox>
+        <Button text="Run" onAction="#click" fx:id="btn"  minHeight="45"/>
+    </HBox>
+</Group>
